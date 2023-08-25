@@ -40,7 +40,8 @@ class _MyHomePageState extends State<MyHomePage> {
       //   title: Text(widget.title),
       // ),
       body: SafeArea(
-        child: SizedBox(
+        child: Container(
+          padding: const EdgeInsets.symmetric(horizontal: 8),
           height: MediaQuery.of(context).size.height,
           child: Column(
             mainAxisSize: MainAxisSize.min,
@@ -55,6 +56,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   children: <Widget>[
                     // Top bar
                     ListTile(
+                      contentPadding: EdgeInsets.zero,
                       title: Row(children: [
                         const Icon(
                           Icons.pin_drop_outlined,
@@ -82,7 +84,10 @@ class _MyHomePageState extends State<MyHomePage> {
                       ),
                     ),
                     // Brands
-                    Text("Marques", style: Theme.of(context).textTheme.titleMedium),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                      child: Text("Marques", style: Theme.of(context).textTheme.titleMedium),
+                    ),
                     const SizedBox(height: 10),
                     SizedBox(
                       height: 50,
